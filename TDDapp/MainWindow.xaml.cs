@@ -42,6 +42,9 @@ namespace TDDapp
                 }
             };
             LVFriends.ItemsSource = friendArray;
+
         }
+
+
     }
 }

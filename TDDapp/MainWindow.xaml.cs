@@ -23,6 +23,25 @@ namespace TDDapp
         public MainWindow()
         {
             InitializeComponent();
+            Dictionary<string, DateTime> friendArray = new Dictionary<string, DateTime> {
+                {
+                    "Masha",
+                    new DateTime(2001,01,2)
+                },
+                {
+                    "Sasha",
+                    new DateTime(2003,05,12)
+                },
+                {
+                    "Pasha",
+                    new DateTime(2000,11,09)
+                },
+                {
+                    "Kasha",
+                    new DateTime(1990,07,02)
+                }
+            };
+            LVFriends.ItemsSource = friendArray;
         }
     }
 }

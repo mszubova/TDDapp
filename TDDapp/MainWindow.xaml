@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TDDapp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="Azure">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="400"/>
@@ -13,12 +13,30 @@
         </Grid.ColumnDefinitions>
         <DockPanel  Grid.Column ="0">
             <TextBlock Text="Друзья:" Margin="10,5" DockPanel.Dock="Top"/>
-            <ListView Margin="10" Name="LVFriends" />
+            <ListView Margin="10" Name="LVFriends" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Key}"/>
+                            <TextBlock Margin="5,0" Text="{Binding Value}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </DockPanel>
         <DockPanel Grid.Column="1">
             <TextBlock Text="Именинники:" Margin="10,5" DockPanel.Dock="Top"/>
             <Button x:Name="BtnRefresh" Margin="10" DockPanel.Dock="Bottom" Content="Обновить" Click="BtnRefresh_Click"/>
-            <ListView Margin="10" Name="LVBirthday" /> 
+            <ListView Margin="10" Name="LVBirthday">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Key}"/>
+                            <TextBlock Margin="5,0" Text="{Binding Value}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </DockPanel>
     </Grid>
 </Window>

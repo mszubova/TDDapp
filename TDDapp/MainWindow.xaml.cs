@@ -39,6 +39,18 @@ namespace TDDapp
                 {
                     "Kasha",
                     new DateTime(1990,07,02)
+                },
+                {
+                    "Misha",
+                    new DateTime(2002,11,09)
+                },
+                {
+                    "Ivan",
+                    new DateTime(1990,07,02)
+                },
+                {
+                    "Tanya",
+                    new DateTime(2003,11,09)
                 }
             };
             LVFriends.ItemsSource = friendArray;

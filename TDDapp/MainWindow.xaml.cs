@@ -42,9 +42,11 @@ namespace TDDapp
                 }
             };
             LVFriends.ItemsSource = friendArray;
-
         }
 
-
+        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            LVBirthday.ItemsSource = LVFriends.ItemsSource.Cast<KeyValuePair<string, DateTime>>().Where(i => BirthdayChecker.IsBirthdayToday(i.Value));
+        }
     }
 }
